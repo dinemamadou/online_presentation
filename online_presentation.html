@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Interpretation of Prosodic variability</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Dine Mamadou" />
+    <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.jvcasillas.com/ru_xaringan/css/rutgers.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.jvcasillas.com/ru_xaringan/css/rutgers-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The Interpretation of Prosodic variability
+## by Warren, P. (2017)
+### Dine Mamadou
+### Rutgers University | Data Sci 4 Ling
+
+---
+
+
+
+
+# Research question and Hypotheses
+## Question
+
+### Does the nature of a segmental phonetic variable influences listeners’ interpretation of prosodic variation?
+--
+
+## Hypotheses
+
+- H1: Stimuli with early rise in intonation will be identified as questions with a fast and more direct mouse trajectory
+- H2: In statements with [iə] realization of the SQUARE diphthong, participants will be likely to choose 'statements'.
+- H3: Younger speakers' production of [iə] will show more compatibility with early and late rises respectively for questions and statements.
+---
+
+# Summary
+###The current study uses the mouse-tracking method to argue that the realization of SQUARE with an innovative [eə] vs. a conservative [iə] variant (in a word early in an utterance) affects New Zealand English listeners’ sensitivity to a late rise as a potential signal of an uptalked statement and the early rise as a signal of a question. This  finding indicates that the interpretation of prosodic variability can depend on speaker characteristics imputed from other sociophonetic cues. This builds on previous research that indicated that listeners are sensitive to the early vs. late rises distinction in making a forced-choice decision as to whether an utterance is a question or a statement. 
+
+---
+
+# Method
+## Stimuli and Design
+
+The stimuli were recorded from a 25 years-old female NZE speaker who produced 20 target sentences. The utterances were synthesized with a similar pitch level both at the beginning and at the end of the utterrances (for both statements and questions). From these, two conditions were created, the early rise and the late rise. The former was in average 349ms long and the rise started at the end of the accented word while the rise didn't start until the following unaccented syllable in the latter (174ms). Each condition has both statements and questions.
+
+--
+
+The diphthongs [iɘ] and [eɘ] variants of SQUARE were resynthesized at an average F1 of 331 Hz and average F2 of 2711 Hz for the former, and average F1=657, F2=2170 for the latter.
+
+--
+
+In each of the two lists created, the 20 test items occurred twice, once with the early rise, and once with the late rise. The two rise versions were allocated to two separate blocks, and each block had an equal number of early and late rise test items. The stimuli were presented in E-Prime to 36 participants aged 18-32. 
+
+---
+# Method
+## Explanation of Analysis
+The linear mixed effects (lme) model was used to analyze response times and mouse-tracking data (continuous variables) for test items. 
+
+--
+
+Fixed effects included Vowel ([iɘ] or [eɘ]), Rise (early or late), Source (whether the stimulus was derived from an original question recording or uptalk statement recording) and the Serial Position of the stimulus in the experiment.
+
+--
+
+Items and participants were included as random effects, along with random mouse slopes by participant.
+
+--
+
+Although the inclusion of the random slopes can account for between-participant variation in how response behaviour changes over the course of the experiment, this additional variable can also increase the likelyhood of having a type I error. The same thing goes for the addition of Source as a predictor.
+---
+# Method
+## Appropriateness of Analysis
+
+The lme method allows for the inclusion of multiple models. It works like a charm for models with continuous variables and makes it easy to see which one of these variables is the best predictor of participant responses.
+
+--
+
+However, because the participant responses are binary categorial variables and analyzed using the Logistic Models, it is unclear how the interaction between the categorial  and continuous variables (the predictors) was assessed.
+
+--
+
+Part of my uncertainty about the Logistic Model came from my lack of familiarity with what it is and how it works. From the way it was presented in the text, however, it seems to be similar to the classical ANOVA, which is appropriate for categorial variables. 
+
+--
+
+The General Linear Model (GLM) is a simple and more inclusive alternative to the Logistic Model because it has the power of accommodating both continuous and categorial variables and shows their interactions.
+
+
+---
+
+# Results
+## Appropriateness of results interpretation 
+A main effect of Rise was found (χ^2 (1) = 43.47, p &lt; 0.0001). This was properly interpreted as a support for hypothesis1 (prediction1) according to which early rises will lead to 'Question' choices while late rises will lead to 'Statement' choices.
+
+--
+
+It's important to note that the conclusion would have had more support if R^2 (variance explained) was reported, since  significance does not always mean importance.
+
+--
+
+And because no other variable or interaction between variables showed significance, hypotheses 2 and 3 were rejected, accordingly.
+
+--
+
+The way the experiment was conducted, it's not clear whether it is early vs. late (horizontal timing) Rise that was significant or the abrupt vs. gradual (vertical timing) Rise of the intonation. So while the results showed evidence of a main effect of intonation Rise, it is yet to be determined which one of the vertical and horizontal timings participants showed sensitivity to.
+
+---
+
+# Results
+## Appropriateness of results interpretation
+
+As for the graphs, they were histograms with non overlapping significance margins for the effects of Rise on response choice. However, just eyeballing the graph that shows the effect of vowel on response choice, there did not seem to be any overlapping either despite the fact that vowel type was said not to have a significant effect on the response choice.
+
+--
+
+My suspicion is that only the diphthong [eə] had a significant effect on response choice but because the test of significance was conducted using the variable 'vowel' (which contains both [iə] and [eə]), the results were blurred.
+
+
+---
+# Personal opinion
+## Things I liked
+The paper was detailed and clearly written.
+
+The predictions of the models under investigation were clearly stated and built upon the hypotheses.
+
+The statistical tests for Response Times (RTs) were conducted on log-transformed RTs not only because RTs were not normally distributed but also because logarithm of RT produced the best fit to a normal distribution (r = 0.999, compared with r = 0.983 for untransformed RTs) unlike other normalization methods (like Centering, I assume) that did not show much improvement from the untransformed RTs.
+
+--
+
+## Areas of improvement
+There was no mention of the consequences of additional variables.
+
+---
+# Personal opinion
+## Areas of improvement (Cont'd)
+Only the Logistic Model was explicitly mentioned in the results, although the graphs showed plots of continuous variables as predictors of other continuous variables, which we know are poorly handled in a Logistic Model (which is best for categorial variables).
+
+The author did not report the predictor with the causal priority in his models. 
+
+For references and a copy of the paper, please click [here](https://www.journal-labphon.org/articles/10.5334/labphon.92/).
+
+---
+
+# FIN.
+# Merci de m'avoir suivi!
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "15:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
